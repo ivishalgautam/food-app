@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
+import { Link } from "react-router-dom";
 
 export default function Popular() {
   const [popular, setPopular] = useState([]);
@@ -14,36 +15,36 @@ export default function Popular() {
       setPopular(JSON.parse(check));
     } else {
       const api = await fetch(
-        `https://api.spoonacular.com/recipes/random?apiKey=f5a69e0e7a2c4b17ae32d7b96022093d&number=9`
+        `https://api.spoonacular.com/recipes/random?apiKey=4e39c4af85fe484599871f95b44f519b&number=9`
       );
       const data = await api.json();
 
       localStorage.setItem("popular", JSON.stringify(data.recipes));
       setPopular(data.recipes);
-      console.log("object");
     }
   };
-  console.log(popular);
   return (
     <Wrapper>
-      <h2>Popular picks</h2>
+      <h3>Popular picks</h3>
       <Splide
         options={{
           perPage: 4,
           arrows: false,
           pagination: false,
           drag: "free",
-          gap: "3rem",
+          gap: "2rem",
         }}
       >
         {popular.map((item) => {
           return (
             <SplideSlide key={item.id}>
-              <Card>
-                <p>{item.title}</p>
-                <img src={item.image} alt="" />
-                <Gradient />
-              </Card>
+              <Link to={"/recipe/" + item.id}>
+                <Card>
+                  <p>{item.title}</p>
+                  <img src={item.image} alt="" />
+                  <Gradient />
+                </Card>
+              </Link>
             </SplideSlide>
           );
         })}
@@ -53,9 +54,9 @@ export default function Popular() {
 }
 
 const Wrapper = styled.div`
-  margin: 2rem 4rem;
+  margin: 1rem 0;
 
-  h2 {
+  h3 {
     margin: 0.1rem 0;
     color: #fff;
   }
@@ -63,8 +64,8 @@ const Wrapper = styled.div`
 
 const Card = styled.div`
   margin: 1rem 0;
-  min-height: 12rem;
-  min-width: 12rem;
+  min-height: 10rem;
+  min-width: 10rem;
   border-radius: 1rem;
   overflow: hidden;
   position: relative;
