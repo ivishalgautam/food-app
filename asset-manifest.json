@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/food-app/static/css/main.ddee5768.css",
+    "main.js": "/food-app/static/js/main.cab69c10.js",
+    "index.html": "/food-app/index.html",
+    "main.ddee5768.css.map": "/food-app/static/css/main.ddee5768.css.map",
+    "main.cab69c10.js.map": "/food-app/static/js/main.cab69c10.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ddee5768.css",
+    "static/js/main.cab69c10.js"
+  ]
+}
