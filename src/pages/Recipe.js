@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export default function Recipe() {
   const [recipeDetails, setRecipeDetails] = useState({});
   const [activeTab, setActiveTab] = useState("summary");
   const params = useParams();
+
   const getDetails = async () => {
     const api = await fetch(
       `https://api.spoonacular.com/recipes/${params.id}/information?apiKey=4e39c4af85fe484599871f95b44f519b`
@@ -20,7 +22,12 @@ export default function Recipe() {
   }, [params.name]);
 
   return (
-    <Details>
+    <Details
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <Image>
         <h4>{recipeDetails.title}</h4>
         <img src={recipeDetails.image} />
@@ -60,7 +67,7 @@ export default function Recipe() {
   );
 }
 
-const Details = styled.div`
+const Details = styled(motion.div)`
   display: flex;
   height: 15rem;
   align-items: center;

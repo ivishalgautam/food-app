@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export default function Cuisine() {
   const [cuisine, setCuisine] = useState([]);
@@ -26,7 +27,12 @@ export default function Cuisine() {
   };
 
   return (
-    <Grid>
+    <Grid
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       {cuisine.map((item) => {
         return (
           <Link key={item.id} to={"/recipe/" + item.id}>
@@ -41,7 +47,7 @@ export default function Cuisine() {
   );
 }
 
-const Grid = styled.div`
+const Grid = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   grid-gap: 2rem;

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export const Searched = () => {
   const params = useParams();
@@ -22,7 +23,12 @@ export const Searched = () => {
   return (
     <>
       {searched.length != 0 ? (
-        <Grid>
+        <Grid
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+        >
           {searched.map((item) => {
             return (
               <Link key={item.id} to={"/recipe/" + item.id}>
@@ -41,7 +47,7 @@ export const Searched = () => {
   );
 };
 
-const Grid = styled.div`
+const Grid = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(10rem, 10rem));
   grid-gap: 2rem;
