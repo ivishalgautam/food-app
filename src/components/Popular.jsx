@@ -38,13 +38,13 @@ export default function Popular() {
         {popular.map((item) => {
           return (
             <SplideSlide key={item.id}>
-              <Link to={"/recipe/" + item.id}>
-                <Card>
+              <Card>
+                <Link to={"/recipe/" + item.id}>
                   <p>{item.title}</p>
                   <img src={item.image} alt="" />
                   <Gradient />
-                </Card>
-              </Link>
+                </Link>
+              </Card>
             </SplideSlide>
           );
         })}

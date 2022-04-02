@@ -69,15 +69,40 @@ export default function Recipe() {
 
 const Details = styled(motion.div)`
   display: flex;
-  height: 15rem;
   align-items: center;
   justify-content: space-between;
-  margin-top: 1rem;
+  margin: 1rem;
+  padding: 1rem 2rem;
+  background-color: #1c1c1c;
+  border-radius: 1rem;
+  filter: drop-shadow(0 0.25rem 0.25rem rgba(0, 0, 0, 0.5));
 
   img {
     height: 12rem;
     border-radius: 0.3rem;
     margin-right: 1rem;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+
+    img {
+      height: 15rem;
+      border-radius: 0.3rem;
+      margin-right: 1rem;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  @media only screen and (max-width: 700px) {
+    img {
+      height: 12rem;
+      border-radius: 0.3rem;
+      margin-right: 1rem;
+    }
   }
 `;
 
@@ -96,6 +121,7 @@ const Text = styled.div`
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
+  margin-top: 2rem;
 `;
 
 const Buttons = styled.div`

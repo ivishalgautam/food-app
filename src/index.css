@@ -7,10 +7,7 @@
 }
 
 body {
-  margin: 0 10rem;
+  margin: 0 5rem;
   margin-top: 5rem;
-  background: #232526;
-  background: -webkit-linear-gradient(to right, #333, #111);
-  background: linear-gradient(to right, #222, #111);
-  background-color: #0a0a0a5d;
+  background-color: #101011;
 }

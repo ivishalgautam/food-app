@@ -38,8 +38,8 @@ const Form = styled.form`
 
   div {
     position: relative;
-    height: 80%;
-    width: 40%;
+    min-height: 80%;
+    width: min(100%, 50%);
 
     input {
       position: absolute;
@@ -53,7 +53,7 @@ const Form = styled.form`
       border: none;
       outline: none;
       color: #fff;
-      filter: drop-shadow(0 0.2rem 0.2rem hsl(0, 0%, 0%));
+      filter: drop-shadow(0 0.25rem 0.25rem hsl(0, 0%, 0%));
 
       &::placeholder {
         color: #fff;

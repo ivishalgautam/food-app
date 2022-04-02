@@ -49,8 +49,10 @@ export default function Cuisine() {
 
 const Grid = styled(motion.div)`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 12rem));
   grid-gap: 2rem;
+  justify-content: center;
+  align-content: center;
 
   a {
     text-decoration: none;
@@ -58,25 +60,29 @@ const Grid = styled(motion.div)`
 `;
 
 const Card = styled.div`
+  padding: 10px;
   margin: 1rem 0;
-  min-height: 10rem;
   min-width: 10rem;
-  border-radius: 1rem;
+  min-height: 13rem;
+  border-radius: 0.5rem;
   overflow: hidden;
-  filter: drop-shadow(0 0.5rem 0.25rem rgba(0, 0, 0, 0.5));
+  background-color: #1c1c1c;
+  filter: drop-shadow(0 0.25rem 0.25rem rgba(0, 0, 0, 0.5));
 
   img {
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     width: 100%;
     object-fit: cover;
   }
 
   p {
-    z-index: 10;
     width: 100%;
     height: 30%;
-    text-align: center;
-    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 600;
     color: #fff;
   }
 `;

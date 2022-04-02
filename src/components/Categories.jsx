@@ -38,14 +38,14 @@ const ListItem = styled(NavLink)`
   height: 4.5rem;
   width: 4.5rem;
   margin: 0 1rem;
-  background-color: #0a0a0a;
+  background-color: #1c1c1c;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  filter: drop-shadow(0 0.2rem 0.2rem hsl(0, 0%, 0%));
+  filter: drop-shadow(0 0.15rem 0.15rem hsl(0, 0%, 0%));
   &.active {
     background: linear-gradient(to right, #4776e6, #8e54e9);
   }
