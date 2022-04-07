@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 export default function Navbar() {
   return (
     <NavbarStyled>
-      <Slink to="/">
+      <Slink to="/food-app">
         Tasty<span>Af</span>
       </Slink>
     </NavbarStyled>
