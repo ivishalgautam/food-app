@@ -8,23 +8,22 @@ export default function Cuisine() {
   const { category } = useParams();
 
   useEffect(() => {
+    const getCuisines = async (name) => {
+      const check = localStorage.getItem(category);
+
+      if (check) {
+        setCuisine(JSON.parse(check));
+      } else {
+        const api = await fetch(
+          `https://api.spoonacular.com/recipes/complexSearch?apiKey=4e39c4af85fe484599871f95b44f519b&number=15&cuisine=${name}`
+        );
+        const data = await api.json();
+        localStorage.setItem(category, JSON.stringify(data.results));
+        setCuisine(data.results);
+      }
+    };
     getCuisines(category);
   }, [category]);
-
-  const getCuisines = async (name) => {
-    const check = localStorage.getItem(category);
-
-    if (check) {
-      setCuisine(JSON.parse(check));
-    } else {
-      const api = await fetch(
-        `https://api.spoonacular.com/recipes/complexSearch?apiKey=4e39c4af85fe484599871f95b44f519b&number=15&cuisine=${name}`
-      );
-      const data = await api.json();
-      localStorage.setItem(category, JSON.stringify(data.results));
-      setCuisine(data.results);
-    }
-  };
 
   return (
     <Grid
@@ -35,12 +34,12 @@ export default function Cuisine() {
     >
       {cuisine.map((item) => {
         return (
-          <Link key={item.id} to={"/recipe/" + item.id}>
-            <Card>
+          <Card key={item.id}>
+            <Link to={"/recipe/" + item.id}>
               <img src={item.image} alt="" />
               <p>{item.title}</p>
-            </Card>
-          </Link>
+            </Link>
+          </Card>
         );
       })}
     </Grid>

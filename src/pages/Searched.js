@@ -22,7 +22,7 @@ export const Searched = () => {
 
   return (
     <>
-      {searched.length != 0 ? (
+      {searched.length !== 0 ? (
         <Grid
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

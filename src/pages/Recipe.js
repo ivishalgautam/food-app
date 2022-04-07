@@ -30,7 +30,7 @@ export default function Recipe() {
     >
       <Image>
         <h4>{recipeDetails.title}</h4>
-        <img src={recipeDetails.image} />
+        <img src={recipeDetails.image} alt="" />
       </Image>
 
       <Text>
