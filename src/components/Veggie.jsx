@@ -28,8 +28,14 @@ export default function Veggie() {
       <h3>Vegetarian picks</h3>
       <Splide
         options={{
-          perPage: 3,
-          arrows: false,
+          perPage:
+            window.innerWidth < 400 ? 1 : window.innerWidth < 630 ? 2 : 3,
+          arrows:
+            window.innerWidth < 400
+              ? true
+              : window.innerWidth < 630
+              ? true
+              : false,
           pagination: false,
           drag: "free",
           gap: "2rem",
@@ -54,7 +60,7 @@ export default function Veggie() {
 }
 
 const Wrapper = styled.div`
-  margin: 1rem 0;
+  margin: 1rem;
 
   h3 {
     margin: 0.1rem 0;

@@ -29,7 +29,7 @@ export default function Search() {
 }
 
 const Form = styled.form`
-  width: 100%;
+  width: 100vw;
   height: 3rem;
   margin: 1rem 0;
   display: flex;
@@ -39,7 +39,13 @@ const Form = styled.form`
   div {
     position: relative;
     min-height: 80%;
-    width: min(100%, 50%);
+    width: 20rem;
+
+    ${
+      "" /* @media only screen and (max-width: 375px) {
+      width: 90%;
+    } */
+    }
 
     input {
       position: absolute;

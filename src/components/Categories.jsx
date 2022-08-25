@@ -30,6 +30,8 @@ const List = styled.div`
   align-items: center;
   justify-content: center;
   margin: 1rem;
+  min-width: 90vw;
+  ${"" /* background-color: red; */}
 `;
 
 const ListItem = styled(NavLink)`
@@ -48,6 +50,13 @@ const ListItem = styled(NavLink)`
   filter: drop-shadow(0 0.15rem 0.15rem hsl(0, 0%, 0%));
   &.active {
     background: linear-gradient(to right, #4776e6, #8e54e9);
+  }
+
+  @media only screen and (max-width: 455px) {
+    margin: 0.2rem;
+    height: 4rem;
+    width: 4rem;
+    font-size: 1rem;
   }
 `;
 
