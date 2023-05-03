@@ -1,4 +1,4 @@
-import { useParams, Link } from "react-router-dom";
+=import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
@@ -15,7 +15,7 @@ export default function Cuisine() {
         setCuisine(JSON.parse(check));
       } else {
         const api = await fetch(
-          `https://api.spoonacular.com/recipes/complexSearch?apiKey=4e39c4af85fe484599871f95b44f519b&number=15&cuisine=${name}`
+          `https://api.spoonacular.com/recipes/complexSearch?apiKey=0f5408f54a25461eaa597db8e08eb174&number=15&cuisine=${name}`
         );
         const data = await api.json();
         localStorage.setItem(category, JSON.stringify(data.results));

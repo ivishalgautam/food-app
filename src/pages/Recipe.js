@@ -10,7 +10,7 @@ export default function Recipe() {
 
   const getDetails = async () => {
     const api = await fetch(
-      `https://api.spoonacular.com/recipes/${params.id}/information?apiKey=4e39c4af85fe484599871f95b44f519b`
+      `https://api.spoonacular.com/recipes/${params.id}/information?apiKey=0f5408f54a25461eaa597db8e08eb174`
     );
     const data = await api.json();
     setRecipeDetails(data);
