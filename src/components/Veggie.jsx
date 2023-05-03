@@ -15,7 +15,7 @@ export default function Veggie() {
       setVeggie(JSON.parse(check));
     } else {
       const api = await fetch(
-        `https://api.spoonacular.com/recipes/random?apiKey=0f5408f54a25461eaa597db8e08eb174&number=9&tags=vegetarian`
+        `https://api.spoonacular.com/recipes/random?apiKey=44a39a5b8db0455e840941a206b6bf2e&number=9&tags=vegetarian`
       );
       const data = await api.json();
 
