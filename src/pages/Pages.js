@@ -11,7 +11,7 @@ export default function Pages() {
     <>
       <AnimatePresence exitBeforeEnter>
         <Routes location={location} key={location.path}>
-          <Route exact path="/food-app" element={<Home />} />
+          <Route exact path="/" element={<Home />} />
           <Route exact path="/cuisine/:category" element={<Cuisine />} />
           <Route exact path="/search/:search" element={<Searched />} />
           <Route exact path="/recipe/:id" element={<Recipe />} />

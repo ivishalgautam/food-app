@@ -21,6 +21,7 @@ export default function Veggie() {
 
       localStorage.setItem("veggie", JSON.stringify(data.recipes));
       setVeggie(data.recipes);
+      return data.recipes;
     }
   };
   return (

@@ -20,6 +20,7 @@ export default function Cuisine() {
         const data = await api.json();
         localStorage.setItem(category, JSON.stringify(data.results));
         setCuisine(data.results);
+        return data.recipes;
       }
     };
     getCuisines(category);
